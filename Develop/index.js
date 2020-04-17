@@ -28,9 +28,15 @@ const questions = [
         name: "usage"       
         },
         {
-        type: "input",
+        type: "list",
         message: "What is the liesence for your application?",
-        name: "lisence info"       
+        name: "lisence info" , 
+        choices: [
+            "MIT", 
+            "....", 
+            "....", 
+            "...."
+          ]      
         },
         {
         type: "input",
