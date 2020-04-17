@@ -1,5 +1,9 @@
-var inquirer = require("inquirer");
+const inquirer = require("inquirer");
+const fs = require("fs");
+const axios = require("axios");
 
+
+/*
 const questions = [
     inquirer.prompt([
         {
@@ -58,24 +62,17 @@ const questions = [
         message: "What is your email?",
         name: "email"       
         },
+
+  
     ])
+
 
 
 ];
 
 
+*/ 
 
 
-
-
-
-function writeToFile(fileName, data) {
-}
-
-function init() {
-
-}
-
-init();
 
 
