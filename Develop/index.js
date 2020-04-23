@@ -3,8 +3,16 @@ const fs = require("fs");
 const axios = require("axios");
 
 
+const githubUsername = [ 
+  {
+  type: "input", 
+  name: "githubusername",
+  message: "What is your github username?"
+  }
+];
+
+
 const readmeQuestions = [
-    inquirer.prompt([
         {
         type: "input",
         message: "What is the title of your project?",
@@ -56,22 +64,9 @@ const readmeQuestions = [
         message: "What is your email?",
         name: "email"       
         },
-        main()
-    ])
-    
 ];
 
-async function main() {
-const githubUsername = [ 
-  await inquirer.prompt([
-    {
-    type: "input", 
-    name: "githubusername",
-    message: "What is your github username?"
-    }
-  ])
-];
-}
+
 
 
 
