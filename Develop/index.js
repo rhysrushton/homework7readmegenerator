@@ -2,35 +2,9 @@ const inquirer = require("inquirer");
 const fs = require("fs");
 const axios = require("axios");
 
-getUsername();
 
-async function getUsername() {
-  try {
-    const { userName } = await inquirer.prompt({
-      message: "What is your github Username?",
-      name: "username"
-    });
-
-    const { data } = await axios.get(
-      `https://www.omdbapi.com/?t=${movie}&apikey=trilogy`
-    );
-
-    console.log(data);
-  
-  } catch (err) {
-    console.log(err);
-  }
-}
-
-
-/*
-const questions = [
+const readmeQuestions = [
     inquirer.prompt([
-        {
-        type: "input",
-        message: "What is your Github user name?",
-        name: "username"
-        },
         {
         type: "input",
         message: "What is the title of your project?",
@@ -82,17 +56,47 @@ const questions = [
         message: "What is your email?",
         name: "email"       
         },
-
-  
+        main()
     ])
-
-
-
+    
 ];
 
+async function main() {
+const githubUsername = [ 
+  await inquirer.prompt([
+    {
+    type: "input", 
+    name: "githubusername",
+    message: "What is your github username?"
+    }
+  ])
+];
+}
 
+
+
+
+/*
+
+getUsername();
+
+async function getUsername() {
+  try {
+    const { userName } = await inquirer.prompt({
+      message: "What is your github Username?",
+      name: "username"
+    });
+
+    const { data } = await axios.get(
+      `https://www.omdbapi.com/?t=${movie}&apikey=trilogy`
+    );
+
+    console.log(data);
+  
+  } catch (err) {
+    console.log(err);
+  }
+}
 */ 
-
-
 
 
