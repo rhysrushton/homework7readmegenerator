@@ -3,7 +3,7 @@ const fs = require("fs");
 const axios = require("axios");
 
 
-const githubUsername = [ 
+const gitUsername = [ 
   {
   type: "input", 
   name: "githubusername",
@@ -36,7 +36,7 @@ const readmeQuestions = [
         {
         type: "list",
         message: "What is the liesence for your application?",
-        name: "lisence info" , 
+        name: "lisence" , 
         choices: [
             "MIT", 
             "....", 
@@ -66,9 +66,81 @@ const readmeQuestions = [
         },
 ];
 
+const apiCall = {
+  async infoGit(username){
+    try{
+      const userData = await axios.get("https://api.github.com/users/" + username,{
+        authentication:{
+          username: "rhysrushton",
+          password: "Wittgensteinkilledfrege1815!"
+        }
+      });
+      const{email, avatar_url} = user.data; 
+      return {email, avatar_url}; 
+    } catch(error){
+      return console.log("err")
+    }
+  }
+}
+
+console.log(apiCall)
 
 
 
+//Function for generating readme. 
+/*
+function generatedRM(data){
+  return ` 
+  # ${.title}
+  
+  ## Description
+  
+  ${.Description}
+  
+  
+  ## Table of Contents 
+  
+  -[Installation](#Installation)
+  -[Usage](#Usage)
+  -[Lisense](#License)
+  -[Contribute](#Contribute)
+  -[Tests](#Tests)
+  -[Questions] (#Questions)
+  
+  
+  ## Installation 
+  
+  ${.Installation}
+  
+  ## Usage
+  
+  ${.usage}
+  
+  ## License 
+  
+  ${.lisence}
+  
+  ## Contribute
+  
+  ${.contribute}
+  
+  ## Tests
+  
+  ${.tests}
+  
+  ## Questions
+  
+  ${.questions}
+  
+  ## Email 
+  
+  ${. email}
+  ## Profile Picture
+  
+  ${.title}
+  ` ; 
+  } 
+  */ 
 
 
 /*

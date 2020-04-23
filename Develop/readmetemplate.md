@@ -1,10 +1,11 @@
-# Title
 
-object name = Title
+function generatedRM(data){
+return ` 
+# ${.title}
 
 ## Description
 
-object name = Description
+${.Description}
 
 
 ## Table of Contents 
@@ -19,33 +20,33 @@ object name = Description
 
 ## Installation 
 
-object name = Installation
+${.Installation}
 
 ## Usage
 
-object name = usage
+${.usage}
 
 ## License 
 
-object name = lisence
+${.lisence}
 
 ## Contribute
 
-object name = contribute
+${.contribute}
 
 ## Tests
 
-object name = tests
+${.tests}
 
 ## Questions
 
-object name = questions
+${.questions}
 
 ## Email 
 
-object name = email 
-
+${. email}
 ## Profile Picture
 
-object name = title
-
+${.title}
+` ; 
+} 
