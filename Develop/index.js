@@ -2,6 +2,26 @@ const inquirer = require("inquirer");
 const fs = require("fs");
 const axios = require("axios");
 
+getUsername();
+
+async function getUsername() {
+  try {
+    const { userName } = await inquirer.prompt({
+      message: "What is your github Username?",
+      name: "username"
+    });
+
+    const { data } = await axios.get(
+      `https://www.omdbapi.com/?t=${movie}&apikey=trilogy`
+    );
+
+    console.log(data);
+  
+  } catch (err) {
+    console.log(err);
+  }
+}
+
 
 /*
 const questions = [
