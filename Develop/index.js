@@ -3,6 +3,7 @@ const fs = require("fs");
 const axios = require("axios");
 
 
+
 const gitUsername = [ 
   {
   type: "input", 
@@ -67,15 +68,26 @@ const readmeQuestions = [
 ];
 
 
+//Incomplete
+/*
+async function main(){
 
+  try{
+    const gitInfo = await inquirer.prompt(gitUsername);
+    const userData = await apiCall.infoGit(gitInfo.githubusername); 
+  }}
+
+  main()
+
+  */ 
 
 const apiCall = {
   async infoGit(username){
     try{
       const userData = await axios.get("https://api.github.com/users/" + username,{
         authentication:{
-          username: "rhysrushton",
-          password: "Wittgensteinkilledfrege1815!"
+          username: "",
+          password: ""
         }
       });
       const{email, avatar_url} = user.data; 
@@ -86,20 +98,18 @@ const apiCall = {
   }
 }
 
-console.log(apiCall)
 
-async function readMe(filename, data) {
+
+async function readMe( data) {
   
   try {
     const rm =generateRM(data);
-    await writeFile("README.md", markdown);
+    await fs.writeFile("README.md", markdown);
     console.log("Successfully wrote to index.html");
   } catch(err) {
     console.log(err);
   }
 }
-
-
 
 function generateRM(data){
   return ` 
