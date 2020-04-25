@@ -66,6 +66,9 @@ const readmeQuestions = [
         },
 ];
 
+
+
+
 const apiCall = {
   async infoGit(username){
     try{
@@ -85,17 +88,26 @@ const apiCall = {
 
 console.log(apiCall)
 
+async function readMe(filename, data) {
+  
+  try {
+    const rm =generateRM(data);
+    await writeFile("README.md", markdown);
+    console.log("Successfully wrote to index.html");
+  } catch(err) {
+    console.log(err);
+  }
+}
 
 
-//Function for generating readme. 
-/*
-function generatedRM(data){
+
+function generateRM(data){
   return ` 
-  # ${.title}
+  # ${data.title}
   
   ## Description
   
-  ${.Description}
+  ${data.Description}
   
   
   ## Table of Contents 
@@ -110,60 +122,39 @@ function generatedRM(data){
   
   ## Installation 
   
-  ${.Installation}
+  ${data.Installation}
   
   ## Usage
   
-  ${.usage}
+  ${data.usage}
   
   ## License 
   
-  ${.lisence}
+  ${data.lisence}
   
   ## Contribute
   
-  ${.contribute}
+  ${data.contribute}
   
   ## Tests
   
-  ${.tests}
+  ${data.tests}
   
   ## Questions
   
-  ${.questions}
+  ${data.questions}
   
   ## Email 
   
-  ${. email}
+  ${data.email}
   ## Profile Picture
   
-  ${.title}
+  ${data.title}
   ` ; 
   } 
-  */ 
-
-
-/*
-
-getUsername();
-
-async function getUsername() {
-  try {
-    const { userName } = await inquirer.prompt({
-      message: "What is your github Username?",
-      name: "username"
-    });
-
-    const { data } = await axios.get(
-      `https://www.omdbapi.com/?t=${movie}&apikey=trilogy`
-    );
-
-    console.log(data);
   
-  } catch (err) {
-    console.log(err);
-  }
-}
-*/ 
+
+
+
 
 
