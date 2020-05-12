@@ -1,6 +1,9 @@
 const inquirer = require("inquirer");
 const fs = require("fs");
 const axios = require("axios");
+const gitAPI = require("./utils/gitAPI"); 
+const makeRM = require("./utils/makeRM"); 
+
 
 
 
@@ -66,105 +69,5 @@ const readmeQuestions = [
         name: "email"       
         },
 ];
-
-
-//Incomplete
-/*
-async function main(){
-
-  try{
-    const gitInfo = await inquirer.prompt(gitUsername);
-    const userData = await apiCall.infoGit(gitInfo.githubusername); 
-  }}
-
-  main()
-
-  */ 
-
-const apiCall = {
-  async infoGit(username){
-    try{
-      const userData = await axios.get("https://api.github.com/users/" + username,{
-        authentication:{
-          username: "",
-          password: ""
-        }
-      });
-      const{email, avatar_url} = user.data; 
-      return {email, avatar_url}; 
-    } catch(error){
-      return console.log("err")
-    }
-  }
-}
-
-
-
-async function readMe( data) {
-  
-  try {
-    const rm =generateRM(data);
-    await fs.writeFile("README.md", markdown);
-    console.log("Successfully wrote to index.html");
-  } catch(err) {
-    console.log(err);
-  }
-}
-
-function generateRM(data){
-  return ` 
-  # ${data.title}
-  
-  ## Description
-  
-  ${data.Description}
-  
-  
-  ## Table of Contents 
-  
-  -[Installation](#Installation)
-  -[Usage](#Usage)
-  -[Lisense](#License)
-  -[Contribute](#Contribute)
-  -[Tests](#Tests)
-  -[Questions] (#Questions)
-  
-  
-  ## Installation 
-  
-  ${data.Installation}
-  
-  ## Usage
-  
-  ${data.usage}
-  
-  ## License 
-  
-  ${data.lisence}
-  
-  ## Contribute
-  
-  ${data.contribute}
-  
-  ## Tests
-  
-  ${data.tests}
-  
-  ## Questions
-  
-  ${data.questions}
-  
-  ## Email 
-  
-  ${data.email}
-  ## Profile Picture
-  
-  ${data.title}
-  ` ; 
-  } 
-  
-
-
-
 
 
