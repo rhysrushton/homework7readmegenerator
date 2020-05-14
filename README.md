@@ -1,2 +1,0 @@
-# Readme Generator - Node.js
-

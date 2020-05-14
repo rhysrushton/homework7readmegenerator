@@ -113,7 +113,7 @@ function makeRM(data){
   return `
   # ${data.Title}
   ## Description
-  ${data.Desciption}
+  ${data.Description}
   ## Table of Contents
   - [Installation](#Installation)
   - [Usage](#Usage)
