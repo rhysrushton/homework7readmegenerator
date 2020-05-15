@@ -135,7 +135,7 @@ function makeRM(data){
   ${data.questions}
 
   ## User Profile 
-  Gihthub profile: <a href="https://github.com/${data.username}">${data.username}</a>   <img alt="GitHub followers" src="https://img.shields.io/github/followers/${data.username}"><br/>Email: ${data.email}
+  Gihthub profile: <a href="https://github.com/${data.username}">${data.username}</a> <br/>Email: ${data.email}
   `
 }
 

@@ -12,7 +12,9 @@
   ## Installation 
   npm install. It requires axios, fs and inquirer. 
   ## Usage 
-  N/A.
+ ![Image description](appinuse.PNG)
+ ![Image description](npmInstall.PNG)
+
   ## Licence 
   MIT
   ## Contribute
